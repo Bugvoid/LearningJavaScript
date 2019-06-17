@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>5</title>
+  </head>
+  <body>
+    <script>
+      function usu(usuarios) {
+        for (usuario of usuarios) {
+          console.log(
+            "O " +
+              usuario.nome +
+              " possui as habilidades: " +
+              usuario.habilidades.join(", ")
+          );
+        }
+      }
+
+      var usuarios = [
+        {
+          nome: "Luan",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+          nome: "Diego",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+      ];
+
+      usu(usuarios);
+    </script>
+  </body>
+</html>
