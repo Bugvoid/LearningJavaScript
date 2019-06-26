@@ -2,7 +2,7 @@ var elementlist = document.querySelector("#app ul");
 var elementinput = document.querySelector("#app input");
 var elementbutton = document.querySelector("#app button");
 
-var all = ["fazer coffe", "learning", "Community"];
+var all = JSON.parse(localStorage.getItem("list_all")) || [];
 
 function lerTodos() {
   elementlist.innerHTML = "";
@@ -37,6 +37,7 @@ function add() {
     all.push(textelement);
     elementinput.value = "";
     lerTodos();
+    saveStorage();
   }
 }
 
@@ -45,4 +46,9 @@ elementbutton.onclick = add;
 function deletet(pos) {
   all.splice(pos, 1);
   lerTodos();
+  saveStorage();
+}
+
+function saveStorage() {
+  localStorage.setItem("list_All", JSON.stringify(all));
 }
